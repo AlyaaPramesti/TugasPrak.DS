@@ -1,0 +1,98 @@
+---
+title: "LatihanModul4"
+author: "Alyaa"
+date: "2022-09-20"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## import dataset
+```{r}
+library(dslabs)
+data('murders')
+```
+```{r}
+murders$population
+pop <- murders$population
+```
+```{r}
+index <- order(pop)
+order(index)
+```
+```{r}
+min(murders$total)
+i_min <- which.min(murders$total)
+murders$state[i_min]
+```
+```{r}
+min(murders$population)
+i_min <- which.min(murders$population)
+murders$state[i_min]
+```
+```{r}
+temp <- c(35, 88, 42, 84, 81, 30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro",
+"San Juan", "Toronto")
+city_temps <- data.frame(name = city, temperature = temp)
+```
+```{r}
+ranks<- c(city_temps)
+ranks
+
+```
+```{r}
+country <- c("Korea", "Jepang", "Thailand", "Vietnam",
+"Australia", "singapore")
+ranking <- c(20, 25, 15, 40, 30, 35)
+my_df<- data.frame(country = country,ranking_rendah = ranking)
+my_df
+```
+```{r}
+ind <- order(my_df$ranking)
+my_df$ranking[ind]
+```
+```{r}
+population_in_millions <- murders$population/log10(4999999)
+total_gun_murders <- murders$total
+plot(population_in_millions, total_gun_murders)
+```
+```{r}
+negarabagian<-with(murders,total_gun_murders/population_in_millions*4999999)
+hist(negarabagian)
+```
+```{r}
+murders$rate<-with(murders,total_gun_murders/population_in_millions*4999999)
+boxplot(rate~region, data = murders)
+```
+
+
+
+
+
+
