@@ -41,6 +41,7 @@ murders
 
 #data str
 ```{r}
+//Jawaban no 1 adalah (d)str tidak menunjukkan informasi yang relevan. 
 str(murders)
 ```
 
