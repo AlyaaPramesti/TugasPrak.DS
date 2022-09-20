@@ -37,11 +37,12 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 library(dslabs)
 data('murders')
 murders
+//Jawaban no 1 adalah (d)str tidak menunjukkan informasi yang relevan.
 ```
 
 #data str
 ```{r}
-//Jawaban no 1 adalah (d)str tidak menunjukkan informasi yang relevan. 
+//Jawaban no 2 adalah  state, abb, region, population, total
 str(murders)
 ```
 
